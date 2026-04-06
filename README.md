@@ -1,6 +1,6 @@
-# TaskFlow Pro
+# Xplore Intellects Task management sytem
 
-TaskFlow Pro is a role-based employee task management system built with MongoDB, Express, React, and Node.js.
+Xplore Intellects Task management sytem is a role-based employee task management system built with MongoDB, Express, React, and Node.js.
 
 ## Features
 

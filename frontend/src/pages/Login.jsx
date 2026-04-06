@@ -26,7 +26,7 @@ const Login = () => {
   return (
     <div className="flex min-h-screen items-center justify-center bg-black px-4 text-white">
       <form onSubmit={handleSubmit} className="w-full max-w-md rounded-2xl border border-slate-800 bg-slate-900 p-8">
-        <p className="text-sm font-semibold uppercase tracking-[0.28em] text-cyan-600 dark:text-cyan-400">TaskFlow Pro</p>
+        <p className="text-sm font-semibold uppercase tracking-[0.28em] text-cyan-600 dark:text-cyan-400">Xplore Intellects Task management sytem</p>
         <h1 className="mt-3 text-3xl font-bold tracking-tight">Sign in</h1>
         <p className="mt-2 text-sm text-slate-400">Use the admin credentials or an approved employee account.</p>
 

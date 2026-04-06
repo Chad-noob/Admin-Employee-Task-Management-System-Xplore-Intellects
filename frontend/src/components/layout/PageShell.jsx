@@ -13,7 +13,7 @@ const PageShell = ({ title, subtitle, children }) => {
           <div className="flex flex-col gap-4 lg:flex-row lg:items-center lg:justify-between">
             <div>
               <Link to={homePath} className="text-xl font-bold tracking-tight text-white">
-                TaskFlow Pro
+                Xplore Intellects Task management sytem
               </Link>
               <p className="mt-1 text-sm text-slate-400">{subtitle}</p>
             </div>

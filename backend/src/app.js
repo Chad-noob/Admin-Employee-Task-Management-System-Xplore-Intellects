@@ -17,7 +17,7 @@ app.use(express.json({ limit: '1mb' }));
 app.use(morgan('dev'));
 
 app.get('/api/health', (_req, res) => {
-  res.json({ status: 'ok', message: 'TaskFlow Pro API is running' });
+  res.json({ status: 'ok', message: 'Xplore Intellects Task management sytem API is running' });
 });
 
 app.use('/api/auth', authRoutes);

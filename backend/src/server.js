@@ -7,7 +7,7 @@ const PORT = process.env.PORT || 5000;
 const start = async () => {
   await connectDB();
   app.listen(PORT, () => {
-    console.log(`TaskFlow Pro backend running on port ${PORT}`);
+    console.log(`Xplore Intellects Task management sytem backend running on port ${PORT}`);
   });
 };
 

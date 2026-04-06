@@ -13,7 +13,7 @@ const Landing = () => {
       <div className="mx-auto flex min-h-screen max-w-7xl flex-col px-4 py-6 lg:px-6">
         <header className="flex items-center justify-between rounded-2xl border border-slate-800 bg-slate-900 px-5 py-4">
           <div>
-            <p className="text-xl font-bold tracking-tight">TaskFlow Pro</p>
+            <p className="text-xl font-bold tracking-tight">Xplore Intellects Task management sytem</p>
             <p className="text-sm text-slate-400">Employee task management</p>
           </div>
           <div className="flex gap-3">
@@ -32,7 +32,7 @@ const Landing = () => {
               Task management for teams.
             </motion.h1>
             <motion.p initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.1 }} className="mt-6 max-w-2xl text-base leading-7 text-slate-300">
-              TaskFlow Pro keeps approvals, assignments, and task progress in one simple place for admins and employees.
+              Xplore Intellects Task management sytem keeps approvals, assignments, and task progress in one simple place for admins and employees.
             </motion.p>
             <motion.div initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.15 }} className="mt-8 flex flex-wrap gap-4">
               <Link to="/login" className="rounded-full bg-white px-6 py-3 text-sm font-semibold text-slate-900 transition hover:bg-slate-200">
