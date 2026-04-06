@@ -45,10 +45,11 @@ const loginUser = async (req, res) => {
     throw new AppError('Email and password are required', 400);
   }
 
-  const normalizedEmail = email.toLowerCase();
+  const normalizedEmail = email.trim().toLowerCase();
+  const normalizedPassword = String(password).trim();
 
-  if (normalizedEmail === adminConfig.email.toLowerCase()) {
-    if (password !== adminConfig.password) {
+  if (normalizedEmail === adminConfig.email.trim().toLowerCase()) {
+    if (normalizedPassword !== adminConfig.password.trim()) {
       throw new AppError('Invalid admin credentials', 401);
     }
 
@@ -70,7 +71,7 @@ const loginUser = async (req, res) => {
     throw new AppError('Invalid email or password', 401);
   }
 
-  const passwordMatches = await bcrypt.compare(password, employee.password);
+  const passwordMatches = await bcrypt.compare(normalizedPassword, employee.password);
   if (!passwordMatches) {
     throw new AppError('Invalid email or password', 401);
   }

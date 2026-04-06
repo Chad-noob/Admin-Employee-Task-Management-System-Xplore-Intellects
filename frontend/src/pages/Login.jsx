@@ -13,7 +13,11 @@ const Login = () => {
     event.preventDefault();
     setLoading(true);
     try {
-      const user = await login(form);
+      const payload = {
+        email: form.email.trim(),
+        password: form.password.trim()
+      };
+      const user = await login(payload);
       toast.success(`Welcome back, ${user.name}`);
       navigate(user.role === 'admin' ? '/admin' : '/employee', { replace: true });
     } catch (error) {
