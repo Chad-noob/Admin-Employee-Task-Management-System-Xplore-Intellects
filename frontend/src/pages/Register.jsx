@@ -24,11 +24,11 @@ const Register = () => {
   };
 
   return (
-    <div className="flex min-h-screen items-center justify-center bg-slate-50 px-4 text-slate-900 dark:bg-slate-950 dark:text-white">
-      <form onSubmit={handleSubmit} className="w-full max-w-md rounded-2xl border border-slate-200 bg-white p-8 dark:border-slate-800 dark:bg-slate-900">
+    <div className="flex min-h-screen items-center justify-center bg-black px-4 text-white">
+      <form onSubmit={handleSubmit} className="w-full max-w-md rounded-2xl border border-slate-800 bg-slate-900 p-8">
         <p className="text-sm font-semibold uppercase tracking-[0.28em] text-emerald-600 dark:text-emerald-400">Employee registration</p>
         <h1 className="mt-3 text-3xl font-bold tracking-tight">Request access</h1>
-        <p className="mt-2 text-sm text-slate-500 dark:text-slate-400">Your account will be activated after admin approval.</p>
+        <p className="mt-2 text-sm text-slate-400">Your account will be activated after admin approval.</p>
 
         <div className="mt-6 space-y-4">
           <input className="w-full rounded-2xl border border-slate-200 bg-white px-4 py-3 text-sm outline-none transition placeholder:text-slate-400 focus:border-slate-400 dark:border-slate-700 dark:bg-slate-950 dark:text-white" placeholder="Full name" value={form.name} onChange={(event) => setForm({ ...form, name: event.target.value })} />
@@ -40,7 +40,7 @@ const Register = () => {
           {loading ? 'Submitting...' : 'Submit registration'}
         </button>
 
-        <p className="mt-5 text-sm text-slate-500 dark:text-slate-400">
+        <p className="mt-5 text-sm text-slate-400">
           Already approved? <Link to="/login" className="font-semibold text-emerald-600 dark:text-emerald-400">Sign in</Link>
         </p>
       </form>

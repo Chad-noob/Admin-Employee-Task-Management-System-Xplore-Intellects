@@ -1,29 +1,27 @@
 import { Link, NavLink } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import useAuth from '../../hooks/useAuth';
-import ThemeToggle from '../ui/ThemeToggle';
 
-const PageShell = ({ title, subtitle, theme, onToggleTheme, children }) => {
+const PageShell = ({ title, subtitle, children }) => {
   const { user, logout } = useAuth();
   const homePath = user?.role === 'admin' ? '/admin' : '/employee';
 
   return (
-    <div className="min-h-screen bg-slate-50 text-slate-900 dark:bg-slate-950 dark:text-white">
+    <div className="min-h-screen bg-black text-white">
       <div className="mx-auto flex min-h-screen max-w-7xl flex-col px-4 py-4 lg:px-6">
-        <header className="rounded-2xl border border-slate-200 bg-white px-5 py-4 dark:border-slate-800 dark:bg-slate-900">
+        <header className="rounded-2xl border border-slate-800 bg-slate-900 px-5 py-4">
           <div className="flex flex-col gap-4 lg:flex-row lg:items-center lg:justify-between">
             <div>
-              <Link to={homePath} className="text-xl font-bold tracking-tight text-slate-900 dark:text-white">
+              <Link to={homePath} className="text-xl font-bold tracking-tight text-white">
                 TaskFlow Pro
               </Link>
-              <p className="mt-1 text-sm text-slate-500 dark:text-slate-400">{subtitle}</p>
+              <p className="mt-1 text-sm text-slate-400">{subtitle}</p>
             </div>
             <div className="flex flex-wrap items-center gap-3">
-              <ThemeToggle theme={theme} onToggle={onToggleTheme} />
               <button
                 type="button"
                 onClick={logout}
-                className="rounded-full bg-slate-900 px-4 py-2 text-sm font-semibold text-white transition hover:bg-slate-800 dark:bg-white dark:text-slate-900"
+                className="rounded-full bg-white px-4 py-2 text-sm font-semibold text-slate-900 transition hover:bg-slate-200"
               >
                 Logout
               </button>
@@ -45,8 +43,8 @@ const PageShell = ({ title, subtitle, theme, onToggleTheme, children }) => {
         <main className="flex-1 py-6">
           <motion.div initial={{ opacity: 0, y: 14 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.35 }}>
             <div className="mb-6">
-              <p className="text-xs font-semibold uppercase tracking-[0.22em] text-slate-500 dark:text-slate-400">{user?.role === 'admin' ? 'Admin Portal' : 'Employee Portal'}</p>
-              <h1 className="mt-2 text-3xl font-bold tracking-tight text-slate-900 dark:text-white">{title}</h1>
+              <p className="text-xs font-semibold uppercase tracking-[0.22em] text-slate-400">{user?.role === 'admin' ? 'Admin Portal' : 'Employee Portal'}</p>
+              <h1 className="mt-2 text-3xl font-bold tracking-tight text-white">{title}</h1>
             </div>
             {children}
           </motion.div>

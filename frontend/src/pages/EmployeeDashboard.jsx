@@ -11,7 +11,7 @@ import TaskCard from '../components/cards/TaskCard';
 
 const taskTabs = ['All', 'Pending', 'In Progress', 'Completed'];
 
-const EmployeeDashboard = ({ theme, setTheme }) => {
+const EmployeeDashboard = () => {
   const [loading, setLoading] = useState(true);
   const [summary, setSummary] = useState(null);
   const [tasks, setTasks] = useState([]);
@@ -62,8 +62,6 @@ const EmployeeDashboard = ({ theme, setTheme }) => {
     <PageShell
       title="My tasks"
       subtitle="Review assignments, update status, and follow your progress."
-      theme={theme}
-      onToggleTheme={() => setTheme((currentTheme) => (currentTheme === 'dark' ? 'light' : 'dark'))}
     >
       <section className="grid gap-4 md:grid-cols-2 xl:grid-cols-4">
         {loading ? (

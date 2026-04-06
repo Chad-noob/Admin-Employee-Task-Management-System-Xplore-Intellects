@@ -2,7 +2,6 @@ import { useEffect, useMemo, useState } from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
 import toast from 'react-hot-toast';
 import api from '../services/api';
-import useAuth from '../hooks/useAuth';
 import PageShell from '../components/layout/PageShell';
 import StatCard from '../components/ui/StatCard';
 import SkeletonCard from '../components/ui/SkeletonCard';
@@ -14,8 +13,7 @@ import TaskCard from '../components/cards/TaskCard';
 
 const taskTabs = ['All', 'Pending', 'In Progress', 'Completed'];
 
-const AdminDashboard = ({ theme, setTheme }) => {
-  const { logout } = useAuth();
+const AdminDashboard = () => {
   const [loading, setLoading] = useState(true);
   const [summary, setSummary] = useState(null);
   const [employees, setEmployees] = useState([]);
@@ -117,8 +115,6 @@ const AdminDashboard = ({ theme, setTheme }) => {
     <PageShell
       title="Admin dashboard"
       subtitle="Approve employees, assign tasks, and review status at a glance."
-      theme={theme}
-      onToggleTheme={() => setTheme((currentTheme) => (currentTheme === 'dark' ? 'light' : 'dark'))}
     >
       <section className="grid gap-4 md:grid-cols-2 xl:grid-cols-4">
         {loading ? (

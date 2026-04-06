@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useEffect } from 'react';
 import { Navigate, Route, Routes } from 'react-router-dom';
 import useAuth from './hooks/useAuth';
 import Landing from './pages/Landing';
@@ -11,12 +11,10 @@ import NotFound from './pages/NotFound';
 
 const App = () => {
   const { user } = useAuth();
-  const [theme, setTheme] = useState(() => localStorage.getItem('taskflow-theme') || 'light');
 
   useEffect(() => {
-    document.documentElement.classList.toggle('dark', theme === 'dark');
-    localStorage.setItem('taskflow-theme', theme);
-  }, [theme]);
+    document.documentElement.classList.add('dark');
+  }, []);
 
   return (
     <Routes>
@@ -27,7 +25,7 @@ const App = () => {
         path="/admin"
         element={
           <ProtectedRoute allowedRoles={[ 'admin' ]}>
-            <AdminDashboard theme={theme} setTheme={setTheme} />
+            <AdminDashboard />
           </ProtectedRoute>
         }
       />
@@ -35,7 +33,7 @@ const App = () => {
         path="/employee"
         element={
           <ProtectedRoute allowedRoles={[ 'employee' ]}>
-            <EmployeeDashboard theme={theme} setTheme={setTheme} />
+            <EmployeeDashboard />
           </ProtectedRoute>
         }
       />
