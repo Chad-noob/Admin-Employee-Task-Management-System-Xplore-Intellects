@@ -2,6 +2,19 @@
 
 Xplore Intellects Task management sytem is a role-based employee task management system built with MongoDB, Express, React, and Node.js.
 
+## Development Note
+
+This project was built in approximately 3 hours with limited time.
+The current version focuses on core functionality, clean structure, and a usable UI within that timeline.
+
+## Future Enhancements
+
+- Better analytics and reporting widgets
+- Email notifications for approval and task updates
+- File attachments and task comments
+- Improved test coverage (unit and integration tests)
+- Deployment pipeline and production monitoring
+
 ## Features
 
 - Admin login with predefined credentials
