@@ -6,6 +6,7 @@ import Login from './pages/Login';
 import Register from './pages/Register';
 import AdminDashboard from './pages/AdminDashboard';
 import EmployeeDashboard from './pages/EmployeeDashboard';
+import StatusCheck from './pages/StatusCheck';
 import ProtectedRoute from './components/auth/ProtectedRoute';
 import NotFound from './pages/NotFound';
 
@@ -34,6 +35,14 @@ const App = () => {
         element={
           <ProtectedRoute allowedRoles={[ 'employee' ]}>
             <EmployeeDashboard />
+          </ProtectedRoute>
+        }
+      />
+      <Route
+        path="/status"
+        element={
+          <ProtectedRoute allowedRoles={[ 'employee' ]}>
+            <StatusCheck />
           </ProtectedRoute>
         }
       />

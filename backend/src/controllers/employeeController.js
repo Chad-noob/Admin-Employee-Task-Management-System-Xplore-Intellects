@@ -37,4 +37,22 @@ const rejectEmployee = async (req, res) => {
   res.json({ message: 'Employee rejected and removed' });
 };
 
-export { listEmployees, approveEmployee, rejectEmployee };
+const getMyStatus = async (req, res) => {
+  const employee = await Employee.findById(req.user.id).select('-password');
+  if (!employee) {
+    throw new AppError('Employee not found', 404);
+  }
+
+  res.json({
+    status: employee.isApproved ? 'approved' : 'pending',
+    employee: {
+      id: employee._id,
+      name: employee.name,
+      email: employee.email,
+      isApproved: employee.isApproved,
+      createdAt: employee.createdAt
+    }
+  });
+};
+
+export { listEmployees, approveEmployee, rejectEmployee, getMyStatus };

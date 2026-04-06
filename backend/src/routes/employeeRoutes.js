@@ -1,8 +1,10 @@
 import { Router } from 'express';
-import { listEmployees, approveEmployee, rejectEmployee } from '../controllers/employeeController.js';
+import { listEmployees, approveEmployee, rejectEmployee, getMyStatus } from '../controllers/employeeController.js';
 import { adminOnly, protect } from '../middleware/auth.js';
 
 const router = Router();
+
+router.get('/me/status', protect, getMyStatus);
 
 router.use(protect, adminOnly);
 router.get('/', listEmployees);
